@@ -10,7 +10,7 @@ export { WorkflowCanvas } from './canvas';
 export { NodePalette } from './components/NodePalette';
 export { WorkflowsList } from './list';
 export { WorkflowTemplates } from './list';
-export { ExecutionLogs } from './logs/ExecutionLogs';
+export { ExecutionLogs } from './logs';
 export { useWorkflowStore } from './useWorkflowStore';
 
 // Types

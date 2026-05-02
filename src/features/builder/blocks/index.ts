@@ -32,8 +32,8 @@ export { CountdownBlock } from './CountdownBlock';
 export { ProgressBarBlock } from './ProgressBarBlock';
 export { TestimonialBlock } from './TestimonialBlock';
 export { PricingBlock } from './PricingBlock';
-export { FaqBlock } from './FAQBlock';
-export { HtmlBlock } from './HTMLBlock';
+export { FaqBlock } from './FaqBlock';
+export { HtmlBlock } from './HtmlBlock';
 
 export { ProductBlock } from './ProductBlock';
 export { CartBlock } from './CartBlock';
