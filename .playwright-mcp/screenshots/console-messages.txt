@@ -1,0 +1,5 @@
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=ab7d2fab:20102
+[LOG] Supabase Init: URL present? true Key present? true @ http://localhost:5173/src/lib/supabase.ts:3
+[LOG] App mounting... @ http://localhost:5173/src/main.tsx?t=1769559170034:5
+[LOG] App mounted successfully @ http://localhost:5173/src/main.tsx?t=1769559170034:18
+[VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:5173/auth:0

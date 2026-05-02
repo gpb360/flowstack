@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">FlowStack image placeholder</title>
+  <desc id="desc">A neutral local placeholder for image blocks.</desc>
+  <rect width="1200" height="800" fill="#0d0f12"/>
+  <rect x="1" y="1" width="1198" height="798" fill="none" stroke="#24272f" stroke-width="2"/>
+  <path d="M230 610L455 385L610 540L720 430L970 610H230Z" fill="#24272f"/>
+  <circle cx="780" cy="250" r="70" fill="#d4af37" opacity="0.7"/>
+  <text x="600" y="700" text-anchor="middle" fill="#8a8f9a" font-family="Arial, sans-serif" font-size="32">Image placeholder</text>
+</svg>

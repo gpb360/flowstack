@@ -1,0 +1,271 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme {
+  /* ========================================
+     LINEAR-INSPIRED DARK THEME
+     Based on actual Linear.app design system
+     ======================================== */
+
+  /* Background Colors - Ultra-dark elevation system */
+  --color-background: #08090a;          /* Base - nearly black */
+  --color-surface: #1c1c1f;             /* Elevated surfaces */
+  --color-surface-hover: #28282c;       /* Hover states */
+  --color-surface-active: #232326;      /* Active/pressed */
+  --color-surface-elevated: #141516;    /* Level 2 elevation */
+
+  /* Text Colors - 4-step hierarchy from Linear */
+  --color-text-primary: #f7f8f8;        /* Primary text - nearly white */
+  --color-text-secondary: #d0d6e0;      /* Secondary text */
+  --color-text-muted: #8a8f98;          /* Tertiary text - muted */
+  --color-text-disabled: #62666d;       /* Disabled/very subtle */
+
+  /* Border Colors - Subtle, nearly invisible */
+  --color-border: #23252a;              /* Hairline borders */
+  --color-border-strong: #34343a;       /* Strong borders */
+  --color-border-translucent: rgba(255, 255, 255, 0.05);
+
+  /* Line/Separator Colors */
+  --color-line-subtle: #18191a;         /* Very subtle dividers */
+  --color-line-default: #202122;        /* Default dividers */
+  --color-line-strong: #37393a;         /* Strong dividers */
+
+  /*
+     PRIMARY ACCENT - Goldish, Shimmery, Metallic Yellow
+     Gradient creates metallic shimmer effect
+  */
+  --color-primary: #d4af37;             /* Classic gold */
+  --color-primary-light: #e8c547;       /* Light gold shimmer */
+  --color-primary-dark: #c9a227;        /* Dark gold shadow */
+  --color-primary-muted: rgba(212, 175, 55, 0.1);
+  --color-primary-glow: rgba(212, 175, 55, 0.15);
+
+  /* Gradient for metallic effect */
+  --color-primary-gradient: linear-gradient(135deg, #e8c547 0%, #d4af37 50%, #c9a227 100%);
+
+  /* Status Colors */
+  --color-success: #4cb782;             /* Linear green */
+  --color-warning: #f2c94c;             /* Linear yellow */
+  --color-error: #eb5757;               /* Linear red */
+  --color-info: #4ea7fc;                /* Linear blue */
+
+  /* Semantic Colors with gold accent */
+  --color-brand-bg: #d4af37;            /* Gold brand background */
+  --color-brand-text: #08090a;          /* Near-black text on gold */
+
+  /* Spacing System - 4px base unit */
+  --spacing-0: 0;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+
+  /* Border Radius - From Linear */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows - Layered for depth */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.15), 0 2px 8px rgba(212, 175, 55, 0.1);
+
+  /* Typography - Inter Variable with optical sizing */
+  --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Berkeley Mono', 'SF Mono', 'Menlo', monospace;
+
+  /* Font Weights - Variable font optical sizing */
+  --font-weight-normal: 400;
+  --font-weight-medium: 510;    /* Optical medium */
+  --font-weight-semibold: 590;  /* Optical semibold */
+  --font-weight-bold: 680;      /* Optical bold */
+
+  /* Letter Spacing - Negative for tight, modern look */
+  --letter-spacing-tight: -0.012em;
+  --letter-spacing-tighter: -0.022em;
+
+  /* Tailwind color mapping for backward compatibility */
+  --background: var(--color-background);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-surface);
+  --card-foreground: var(--color-text-primary);
+  --popover: var(--color-surface);
+  --popover-foreground: var(--color-text-primary);
+  --primary: var(--color-primary);
+  --primary-foreground: var(--color-brand-text);
+  --secondary: var(--color-surface-hover);
+  --secondary-foreground: var(--color-text-primary);
+  --muted: var(--color-surface);
+  --muted-foreground: var(--color-text-muted);
+  --accent: var(--color-surface-hover);
+  --accent-foreground: var(--color-text-primary);
+  --destructive: var(--color-error);
+  --destructive-foreground: #ffffff;
+  --border: var(--color-border);
+  --input: var(--color-surface-hover);
+  --ring: var(--color-primary);
+
+  /* Additional utility mappings */
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --text-muted: var(--color-text-muted);
+  --surface: var(--color-surface);
+  --surface-hover: var(--color-surface-hover);
+  --surface-active: var(--color-surface-active);
+  --border-hover: var(--color-border-strong);
+  --success: var(--color-success);
+  --warning: var(--color-warning);
+  --error: var(--color-error);
+  --info: var(--color-info);
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR (Linear-style)
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-hover);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-surface-active);
+}
+
+/* ========================================
+   SELECTION
+   ======================================== */
+
+::selection {
+  background-color: var(--color-primary-muted);
+  color: var(--color-brand-text);
+}
+
+/* ========================================
+   FOCUS VISIBLE (accessibility)
+   ======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ========================================
+   METALLIC GOLD TEXT UTILITY
+   Creates shimmer effect on text
+   ======================================== */
+
+.text-gold-gradient {
+  background: var(--color-primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   METALLIC GOLD BACKGROUND UTILITY
+   Creates subtle shimmer on backgrounds
+   ======================================== */
+
+.bg-gold-gradient {
+  background: var(--color-primary-gradient);
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ========================================
+   BUTTON VARIANTS
+   Linear-style with gold accent
+   ======================================== */
+
+.btn-primary {
+  background: var(--color-primary-gradient);
+  color: var(--color-brand-text);
+  border: none;
+  box-shadow: var(--shadow-gold);
+  transition: all 0.15s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.25), 0 4px 12px rgba(212, 175, 55, 0.15);
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   CARD STYLES
+   Subtle elevation, no visible borders
+   ======================================== */
+
+.card-linear {
+  background: var(--color-surface);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.15s ease;
+}
+
+.card-linear:hover {
+  background: var(--color-surface-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   UTILITY: METALLIC GLOW
+   Soft glow effect for emphasis
+   ======================================== */
+
+.glow-gold {
+  box-shadow:
+    0 0 20px var(--color-primary-glow),
+    0 0 40px rgba(212, 175, 55, 0.1),
+    0 0 60px rgba(212, 175, 55, 0.05);
+}

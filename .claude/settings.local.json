@@ -1,0 +1,32 @@
+{
+  "env": {
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-4.6",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-4.7",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-5-turbo",
+    "ANTHROPIC_BASE_URL": "https://api.z.ai/api/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "7cc8215163d84ec58b1df854a3cd5a51.YjejFlD5wS10dsQS"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git merge:*)",
+      "Bash(pnpm test:*)",
+      "Bash(git branch:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(curl:*)",
+      "Bash(supabase:*)",
+      "Bash(git checkout:*)",
+      "Bash(find:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(node scripts/ralph-loop-validate.js:*)",
+      "Bash(npx supabase:*)",
+      "Bash(npm run validate:*)",
+      "Bash(timeout 30 npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(timeout 5 cat:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

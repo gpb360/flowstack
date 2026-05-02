@@ -1,0 +1,24 @@
+#!/bin/bash
+# Ralph Loop Pre-commit Hook
+# Runs quick validation before each commit
+
+echo "🔄 Running Ralph Loop pre-commit validation..."
+
+# Run TypeScript check
+echo "Checking TypeScript..."
+if ! npx tsc --noEmit; then
+  echo "❌ TypeScript errors found. Commit aborted."
+  echo "Run 'npm run validate' to see full details."
+  exit 1
+fi
+
+# Run lint (non-blocking)
+echo "Running ESLint..."
+npm run lint -- --quiet
+LINT_RESULT=$?
+if [ $LINT_RESULT -ne 0 ]; then
+  echo "⚠️  ESLint found issues. Please review (commit allowed)."
+fi
+
+echo "✅ Pre-commit validation passed"
+exit 0

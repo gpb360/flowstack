@@ -1,0 +1,1 @@
+export { BlockPalette } from './BlockPalette';
